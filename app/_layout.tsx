@@ -19,7 +19,9 @@ const RootLayout = () => {
     <TamaguiProvider config={config}>
       <Theme name={colorScheme === "dark" ? "dark" : "light"}>
         <Slot />
-        <StatusBar barStyle="default" />
+        <StatusBar
+          barStyle={colorScheme === "dark" ? "light-content" : "dark-content"}
+        />
       </Theme>
     </TamaguiProvider>
   );

@@ -29,22 +29,32 @@ const headingFont = createInterFont();
 const bodyFont = createInterFont();
 
 const dark = createTheme({
-  primary: "#0097a7",
-  secondary: "#7b1fa2",
+  primary: "#0e624e",
+  secondary: "#fafbfc",
+  started: "#000",
   background: "#000",
-  color: "#fff",
+  color: "#242E38",
+  white: "#fff",
+  black: "#000",
+  muted: "#8e9199",
+  inverted: "#fff",
 });
 
 const light = createTheme({
-  primary: "#00bcd4",
-  secondary: "#9c27b0",
-  background: "#fff",
-  color: "#000",
+  primary: "#0e624e",
+  secondary: "#242E38",
+  started: "#0e624e",
+  background: "#f0f2f3",
+  color: "#fff",
+  white: "#fff",
+  black: "#000",
+  muted: "#8e9199",
+  inverted: "#000",
 });
 
 const config = createTamagui({
   animations,
-  defaultTheme: "light",
+  defaultTheme: "dark",
   shouldAddPrefersColorThemes: false,
   themeClassNameOnRoot: false,
   shorthands,
@@ -57,6 +67,7 @@ const config = createTamagui({
     dark,
   },
   fontSize: {
+    tiny: 8,
     xs: 12,
     sm: 14,
     base: 16,
@@ -94,6 +105,26 @@ const config = createTamagui({
     hoverNone: { hover: "none" },
     pointerCoarse: { pointer: "coarse" },
   }),
+  sizes: {
+    // custom size tokens
+    none: 0,
+    xs: 4,
+    sm: 8,
+    md: 16,
+    lg: 32,
+    xl: 64,
+  },
+  radii: {
+    // custom border radius tokens
+    rounded: 4,
+    pill: 999,
+  },
+  shadow: {
+    shadowColor: "$black",
+    shadowOffset: { width: 1, height: 1 },
+    shadowOpacity: 0.5,
+    shadowRadius: 2,
+  },
 });
 
 export type AppConfig = typeof config;
