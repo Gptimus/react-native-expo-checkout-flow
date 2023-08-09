@@ -2872,6 +2872,14 @@
     "@tamagui/core" "1.50.2"
     "@tamagui/stacks" "1.50.2"
 
+"@tamagui/linear-gradient@^1.52.0":
+  version "1.52.0"
+  resolved "https://registry.yarnpkg.com/@tamagui/linear-gradient/-/linear-gradient-1.52.0.tgz#860704740585db99db8ac4b25724344f81865bf9"
+  integrity sha512-V8y6qTaHkCuTxxe4ZbfRlJskOjt93ueOqydGCD9knA6anzv+Conwa04I+kW7t1yg15npy/BWsUZr3gCMMMe7eA==
+  dependencies:
+    "@tamagui/core" "1.52.0"
+    "@tamagui/stacks" "1.52.0"
+
 "@tamagui/list-item@1.50.2":
   version "1.50.2"
   resolved "https://registry.yarnpkg.com/@tamagui/list-item/-/list-item-1.50.2.tgz#ec155bf01c64ef8ff337d0ae561b6c0f857870e2"
@@ -3173,6 +3181,13 @@
   integrity sha512-rPIY9rDhHyajmw9muZ98tzU6LmJ4uJjY3fhJH58D9oZME1yuBh7wYtMttqdde8WkdVGNyTsi1iYYCD4t6LvoIA==
   dependencies:
     "@tamagui/core" "1.51.0"
+
+"@tamagui/stacks@1.52.0":
+  version "1.52.0"
+  resolved "https://registry.yarnpkg.com/@tamagui/stacks/-/stacks-1.52.0.tgz#1da13c85c1c8ccc926e094386da9b020fdaedadc"
+  integrity sha512-6m7gar6xiw3ooWfJIxAwPA9sVcY9I/pDGyfPhThzyShU1wOZRF5umSZ4pHg7B3dC4tSC7zcnEF8oRqDFcyfaNg==
+  dependencies:
+    "@tamagui/core" "1.52.0"
 
 "@tamagui/static@1.50.2":
   version "1.50.2"
@@ -5219,6 +5234,11 @@ expo-keep-awake@~12.3.0:
   version "12.3.0"
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-12.3.0.tgz#c42449ae19c993274ddc43aafa618792b6aec408"
   integrity sha512-ujiJg1p9EdCOYS05jh5PtUrfiZnK0yyLy+UewzqrjUqIT8eAGMQbkfOn3C3fHE7AKd5AefSMzJnS3lYZcZYHDw==
+
+expo-linear-gradient@~12.3.0:
+  version "12.3.0"
+  resolved "https://registry.yarnpkg.com/expo-linear-gradient/-/expo-linear-gradient-12.3.0.tgz#7abd8fedbf0138c86805aebbdfbbf5e5fa865f19"
+  integrity sha512-f9e+Oxe5z7fNQarTBZXilMyswlkbYWQHONVfq8MqmiEnW3h9XsxxmVJLG8uVQSQPUsbW+x1UUT/tnU6mkMWeLg==
 
 expo-linking@~5.0.2:
   version "5.0.2"

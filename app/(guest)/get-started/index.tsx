@@ -1,4 +1,6 @@
+import { GetStartedSkeleton } from "@/components/ui/skeleton/get-started-skeleton";
 import { TextStandard } from "@/components/ui/text-stantard";
+import { useState } from "react";
 import { TouchableOpacity } from "react-native";
 import {
   Anchor,
@@ -13,9 +15,11 @@ import {
 const GetStarted = () => {
   const { height, width } = useWindowDimensions();
   const media = useMedia();
+  const [loaded, setLoaded] = useState(false);
   return (
     <YStack f={1} jc={"space-between"} backgroundColor={"$started"}>
-      <YStack f={1}>
+      <YStack px={`${!loaded ? "$4" : "auto"}`} f={1}>
+        {!loaded && <GetStartedSkeleton height={height * 0.4} />}
         <Image
           resizeMode="contain"
           source={{
@@ -23,8 +27,10 @@ const GetStarted = () => {
             height: height * 0.5,
             width: width,
           }}
+          onLoad={() => setLoaded(true)}
         />
       </YStack>
+
       <YStack f={1} px={`$4`}>
         <YStack mb="$3">
           <SizableText
@@ -61,7 +67,7 @@ const GetStarted = () => {
                 backgroundColor={"$white"}
                 color={"$primary"}
                 borderWidth="0"
-                pressStyle={{ opacity: 0.9 }}
+                pressStyle={{ opacity: 0.8 }}
               >
                 Join now
               </Button>
