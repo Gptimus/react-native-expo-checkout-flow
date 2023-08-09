@@ -12,9 +12,9 @@ type SkeletonType = {
 export const Skeleton: React.FC<SkeletonType> = ({ height, width, props }) => {
   const colorScheme = useColorScheme();
   const bgColor =
-    colorScheme === "light" ? "rgba(0,0,0,0.12)" : "rgba(255,255,255,0.12)";
+    colorScheme === "light" ? "rgba(0,0,0,0.12)" : "rgba(255,255,255,0.05)";
   const colors =
-    colorScheme === "light" ? "rgba(0,0,0,0.2)" : "rgba(255,255,255,0.2)";
+    colorScheme === "light" ? "rgba(0,0,0,0.2)" : "rgba(255,255,255,0.08)";
   const translateX = useRef(new Animated.Value(-width)).current;
 
   useEffect(() => {
