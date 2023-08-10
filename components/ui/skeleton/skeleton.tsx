@@ -1,5 +1,5 @@
 import { StackProps, YStack } from "tamagui";
-import { Animated, useColorScheme } from "react-native";
+import { Animated, StyleSheet, useColorScheme } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useEffect, useRef } from "react";
 
@@ -48,10 +48,7 @@ export const Skeleton: React.FC<SkeletonType> = ({ height, width, props }) => {
     >
       <Animated.View style={animatedStyle}>
         <LinearGradient
-          style={{
-            width: "100%",
-            height: "100%",
-          }}
+          style={styles.linear}
           colors={["transparent", colors, "transparent"]}
           start={{ x: 1, y: 1 }}
         />
@@ -59,3 +56,10 @@ export const Skeleton: React.FC<SkeletonType> = ({ height, width, props }) => {
     </YStack>
   );
 };
+
+const styles = StyleSheet.create({
+  linear: {
+    width: "100%",
+    height: "100%",
+  },
+});

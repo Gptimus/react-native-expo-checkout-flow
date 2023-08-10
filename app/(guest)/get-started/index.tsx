@@ -1,19 +1,12 @@
 import { GetStartedSkeleton } from "@/components/ui/skeleton/get-started-skeleton";
 import { TextStandard } from "@/components/ui/text-stantard";
 import { useState } from "react";
-import { TouchableOpacity } from "react-native";
-import {
-  Anchor,
-  Button,
-  Image,
-  SizableText,
-  YStack,
-  useMedia,
-  useWindowDimensions,
-} from "tamagui";
+import { Dimensions, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { Anchor, Button, SizableText, YStack, useMedia } from "tamagui";
+
+const { height, width } = Dimensions.get("screen");
 
 const GetStarted = () => {
-  const { height, width } = useWindowDimensions();
   const media = useMedia();
   const [loaded, setLoaded] = useState(false);
   return (
@@ -21,12 +14,8 @@ const GetStarted = () => {
       <YStack px={`${!loaded ? "$4" : "auto"}`} f={1}>
         {!loaded && <GetStartedSkeleton height={height * 0.4} />}
         <Image
-          resizeMode="contain"
-          source={{
-            uri: "https://krcmqbhhmmqactonljmp.supabase.co/storage/v1/object/public/public-files/get-started.png?t=2023-08-09T15%3A44%3A13.519Z",
-            height: height * 0.5,
-            width: width,
-          }}
+          style={styles.image}
+          source={require("@/assets/images/get-started.png")}
           onLoad={() => setLoaded(true)}
         />
       </YStack>
@@ -67,7 +56,7 @@ const GetStarted = () => {
                 backgroundColor={"$white"}
                 color={"$primary"}
                 borderWidth="0"
-                pressStyle={{ opacity: 0.8 }}
+                pressStyle={styles.opacity}
               >
                 Join now
               </Button>
@@ -75,7 +64,7 @@ const GetStarted = () => {
             <YStack f={1} ai={"center"}>
               <TouchableOpacity>
                 <Anchor
-                  pressStyle={{ opacity: 0.8 }}
+                  pressStyle={styles.opacity}
                   color={"white"}
                   lineHeight={`${media.sm ? "$1" : "$8"}`}
                   fontSize={`${media.sm ? "$5" : "$9"}`}
@@ -90,5 +79,15 @@ const GetStarted = () => {
     </YStack>
   );
 };
+
+const styles = StyleSheet.create({
+  image: {
+    width: width,
+    height: height * 0.5,
+  },
+  opacity: {
+    opacity: 0.8,
+  },
+});
 
 export default GetStarted;
